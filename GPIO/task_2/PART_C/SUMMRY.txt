@@ -1,0 +1,26 @@
+i tried to  make a simple for loop an it worked as in the video attached 
+i used this function  : 
+NOTE :
+THE VALUES ARE COMPLETLY RANDOM 
+void GPIO_voidDelayPinOutputSignal( u32 Copy_u32Delay ){
+	 u32 counter = 0;
+	for(counter = (3000*Copy_u32Delay); counter!= 0; counter--) ;
+}
+ and use it in the main function between the value on and off 
+
+int main(void)
+{
+while(1) {
+	RCC_voidInit();
+	RCC_voidPeripheralClockEnable(RCC_APB2, GPIOA);
+	GPIO_voidSetPinMode(GPIO_PORTA, 1, GPIO_PIN_MODE_GP_PP_10MHZ);
+
+	GPIO_voidDelayPinOutputSignal(GPIO_DELAY) ;
+	GPIO_voidSetPinValue(GPIO_PORTA, 1, GPIO_HIGH);
+	GPIO_voidDelayPinOutputSignal(GPIO_DELAY) ;
+	GPIO_voidSetPinValue(GPIO_PORTA, 1, GPIO_LOW);
+
+}
+	return 0;
+}
+
